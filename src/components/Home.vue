@@ -1,19 +1,29 @@
 <template>
     <div>
-        <h1>Example of InterPolation and Data</h1>
-        <h3>{{myName}}</h3>
-        <h3>{{homeTown}}</h3>
-        <h3>Lenght of my name (Monayem):{{"Monayem".length}}</h3>
+        <h1>Example of Methods</h1>
+        <h4>My name is: {{userInfo().userName}}</h4>
+        <h4>My Email: {{userInfo().userEmail}}</h4>
+        <h4>My Age is: {{userInfo().userAge}}</h4>
     </div>
 </template>
 
 <script>
     export default{
         name: "Home",
-        data(){
+        data()
+        {
             return {
-                myName:"Monayem Islam",
-                homeTown: "Chapainawabganj"
+                name: "Monaem",
+                email: "test@email.com"
+            }
+        },
+        methods:{
+            userInfo(){
+                return {
+                    userName: this.name,
+                    userEmail: this.email,
+                    userAge: "24"
+                }
             }
         }
     }
