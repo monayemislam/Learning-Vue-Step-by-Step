@@ -1,9 +1,8 @@
 <template>
     <div>
-        <h1>Example of Methods</h1>
-        <h4>My name is: {{userInfo().userName}}</h4>
-        <h4>My Email: {{userInfo().userEmail}}</h4>
-        <h4>My Age is: {{userInfo().userAge}}</h4>
+        <h4>Count: {{count}}</h4>
+        <button v-on:click="increaseCount()">Increase</button>
+        <button v-on:click="decreaseCount()">Decrease</button>
     </div>
 </template>
 
@@ -12,18 +11,16 @@
         name: "Home",
         data()
         {
-            return {
-                name: "Monaem",
-                email: "test@email.com"
+            return{
+                count: 0
             }
         },
         methods:{
-            userInfo(){
-                return {
-                    userName: this.name,
-                    userEmail: this.email,
-                    userAge: "24"
-                }
+            increaseCount(){
+               this.count = this.count+1;
+            },
+            decreaseCount(){
+               this.count = this.count-1;
             }
         }
     }
