@@ -1,8 +1,9 @@
 <template>
     <div>
-        <h4>Count: {{count}}</h4>
-        <button v-on:click="increaseCount()">Increase</button>
-        <button v-on:click="decreaseCount()">Decrease</button>
+        <h2>Example of Two way Binding</h2>
+        <h4>Please Enter a value</h4>
+        <input type="text" v-model="value">
+        <h4>You have entered: {{value}}</h4>
     </div>
 </template>
 
@@ -12,15 +13,7 @@
         data()
         {
             return{
-                count: 0
-            }
-        },
-        methods:{
-            increaseCount(){
-               this.count = this.count+1;
-            },
-            decreaseCount(){
-               this.count = this.count-1;
+                value: 0
             }
         }
     }
