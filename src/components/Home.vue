@@ -1,9 +1,11 @@
 <template>
     <div>
-        <h2>Conditional Rendering (IF-Else)</h2>
-        <h4 v-if="show">Hi ! I am the if condition</h4>
-        <h4 v-else>Else condition</h4>
-        <button v-on:click="show=!show">Click Me For Toggle</button>
+        <h2>Loop</h2>
+        <ul>
+            <li v-for="item in users" :key="item.id">
+                {{item.role}} role is playing by : {{item.name}}<br>
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -13,7 +15,23 @@
         data()
         {
             return{
-               show: true
+               users:[
+                   {
+                       id: 12,
+                       name: "Monayem",
+                       role: "Web Developer"
+                   },
+                   {
+                       id: 13,
+                       name: "Shemanto",
+                       role: "SEO Expert"
+                   },
+                   {
+                       id: 14,
+                       name: "Raju",
+                       role: "Graphics Designer"
+                   }
+               ]
             }
         }
     }
