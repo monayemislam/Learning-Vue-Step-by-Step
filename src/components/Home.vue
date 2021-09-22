@@ -1,9 +1,28 @@
 <template>
     <div>
-        <h2>Example of Two way Binding</h2>
-        <h4>Please Enter a value</h4>
-        <input type="text" v-model="value">
-        <h4>You have entered: {{value}}</h4>
+        <h2>Checkbox and Radio Button</h2>
+
+        <h4>Which programming language want to learn?</h4>
+
+        <label>PHP</label>
+        <input type="checkbox" v-model="languages" id="php" value="Php">
+
+        <label>Java</label>
+        <input type="checkbox" v-model="languages" id="java" value="Java">
+        <label>Python</label>
+        <input type="checkbox" v-model="languages" id="python" value="Pythod">
+
+        <h4>Selected Languages: {{languages}}</h4>
+    </div>
+    <div>
+
+        <h4>Select Role</h4>
+        <label>IoT Engineer</label>
+        <input type="radio" v-model="srole" id="iot" value="IoT Engineer" name="profession">
+        <label>Data Scientist</label>
+        <input type="radio" v-model="srole" id="data" value="Data Scientist" name="profession">
+
+        <h4>Selected Role: {{srole}}</h4>
     </div>
 </template>
 
@@ -13,7 +32,8 @@
         data()
         {
             return{
-                value: 0
+               languages: [],
+               srole: null
             }
         }
     }
