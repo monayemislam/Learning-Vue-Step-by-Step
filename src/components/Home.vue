@@ -1,28 +1,9 @@
 <template>
     <div>
-        <h2>Checkbox and Radio Button</h2>
-
-        <h4>Which programming language want to learn?</h4>
-
-        <label>PHP</label>
-        <input type="checkbox" v-model="languages" id="php" value="Php">
-
-        <label>Java</label>
-        <input type="checkbox" v-model="languages" id="java" value="Java">
-        <label>Python</label>
-        <input type="checkbox" v-model="languages" id="python" value="Pythod">
-
-        <h4>Selected Languages: {{languages}}</h4>
-    </div>
-    <div>
-
-        <h4>Select Role</h4>
-        <label>IoT Engineer</label>
-        <input type="radio" v-model="srole" id="iot" value="IoT Engineer" name="profession">
-        <label>Data Scientist</label>
-        <input type="radio" v-model="srole" id="data" value="Data Scientist" name="profession">
-
-        <h4>Selected Role: {{srole}}</h4>
+        <h2>Conditional Rendering (IF-Else)</h2>
+        <h4 v-if="show">Hi ! I am the if condition</h4>
+        <h4 v-else>Else condition</h4>
+        <button v-on:click="show=!show">Click Me For Toggle</button>
     </div>
 </template>
 
@@ -32,8 +13,7 @@
         data()
         {
             return{
-               languages: [],
-               srole: null
+               show: true
             }
         }
     }
